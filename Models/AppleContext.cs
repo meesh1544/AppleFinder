@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AppleFinder.Models;
 
 namespace AppleFinder.Models
 {
@@ -36,5 +37,11 @@ namespace AppleFinder.Models
                 
                 );
         }
+
+        public DbSet<AppleFinder.Models.Apples>? Apples { get; set; }
+
+        public DbSet<AppleFinder.Models.Map>? Map { get; set; }
+
+        public DbSet<AppleFinder.Models.Orchard>? Orchard { get; set; }
     }
 }

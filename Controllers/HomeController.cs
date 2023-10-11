@@ -23,6 +23,20 @@ namespace AppleFinder.Controllers
             return View();
         }
 
+        public IActionResult Apple()
+        {
+            return View();
+        }
+
+        public IActionResult Map()
+        {
+            return View();
+        }
+
+        public IActionResult Orchards()
+        {
+            return View();
+        }
         public IActionResult Contact()
         {
             return View();
