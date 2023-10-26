@@ -21,8 +21,8 @@ namespace AppleFinder.Controllers
         // GET: Member
         public async Task<IActionResult> Index()
         {
-              return _context.Membership != null ? 
-                          View(await _context.Membership.ToListAsync()) :
+            return _context.Membership != null ?
+                        View(await _context.Membership.ToListAsync()) :
                           Problem("Entity set 'AppleContext.Membership'  is null.");
         }
 
