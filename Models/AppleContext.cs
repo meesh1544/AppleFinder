@@ -22,7 +22,7 @@ namespace AppleFinder.Models
                     LastName = "Beckett",
                     Address= "19878 Maple Glade Ln",
                     City = "Lake Ann",
-                    State = "Michigan",
+                    State = "MI",
                     Email = "mbeckett@nmc.edu",
                     Zip = "49970",
                     Cell = "231-357-1640"
@@ -34,7 +34,7 @@ namespace AppleFinder.Models
                     LastName = "Henderson",
                     Address= "1887 Forest Ln",
                     City = "Nowhere",
-                    State ="Alaska",
+                    State ="Ak",
                     Email = "hhenderson@gmail.com",
                     Zip = "45987",
                     Cell = "765-441-0032"
@@ -47,7 +47,7 @@ namespace AppleFinder.Models
                     LastName = "Bunny",
                     Address= "1887 Hop Ln",
                     City = "Carrot",
-                    State ="Wyoming",
+                    State ="WY",
                     Email = "bbunny43@gmail.com",
                     Zip = "49684",
                     Cell = "887-995-2201"

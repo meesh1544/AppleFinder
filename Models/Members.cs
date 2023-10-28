@@ -18,12 +18,14 @@ namespace AppleFinder.Models
         [Required]
         [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Only alphabetic letters are allowed.")]
         [Display(Name = "First Name")]
+        [Column("First Name")]
         [StringLength(30, ErrorMessage = "Please enter your full name using 30 characters or less.")]
         public string FirstName { get; set; } = string.Empty;
 
         [Required]
         [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Only alphabetic letters are allowed.")]
         [Display(Name = "Last Name")]
+        [Column("Last Name")]
         [StringLength(30, ErrorMessage = "Please enter your full name using 30 characters or less.")]
         public string LastName { get; set; } = string.Empty;
 
@@ -33,7 +35,7 @@ namespace AppleFinder.Models
         [StringLength(30, ErrorMessage = "Please enter the city using 30 characters or less.")]
         public string City { get; set; } = string.Empty;
 
-        [StringLength(2, ErrorMessage = "Please enter the state using 2 characters.")]
+        [StringLength(20, ErrorMessage = "Please enter the state using 2 characters.")]
         public string? State { get; set; } = string.Empty;
 
         [StringLength(10, ErrorMessage = "Zipcode has a maximum length of 10 numbers.")]

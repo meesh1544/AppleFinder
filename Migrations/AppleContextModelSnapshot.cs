@@ -85,16 +85,18 @@ namespace AppleFinder.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("First Name");
 
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("Last Name");
 
                     b.Property<string>("State")
-                        .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Zip")
                         .IsRequired()
@@ -115,7 +117,7 @@ namespace AppleFinder.Migrations
                             Email = "mbeckett@nmc.edu",
                             FirstName = "Michelle",
                             LastName = "Beckett",
-                            State = "Michigan",
+                            State = "MI",
                             Zip = "49970"
                         },
                         new
@@ -127,7 +129,7 @@ namespace AppleFinder.Migrations
                             Email = "hhenderson@gmail.com",
                             FirstName = "Harry",
                             LastName = "Henderson",
-                            State = "Alaska",
+                            State = "Ak",
                             Zip = "45987"
                         },
                         new
@@ -139,7 +141,7 @@ namespace AppleFinder.Migrations
                             Email = "bbunny43@gmail.com",
                             FirstName = "Bugs",
                             LastName = "Bunny",
-                            State = "Wyoming",
+                            State = "WY",
                             Zip = "49684"
                         });
                 });
