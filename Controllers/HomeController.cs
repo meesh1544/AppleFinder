@@ -45,6 +45,10 @@ namespace AppleFinder.Controllers
         {
             return View();
         }
+        public IActionResult MemberList()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

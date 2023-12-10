@@ -11,7 +11,12 @@ namespace AppleFinder.Models
     {
         public AppleContext(DbContextOptions<AppleContext> options) : base(options)
         { }
-        public DbSet<Members> ?Membership { get; set; }
+        public DbSet<Members> ?Membership { get; set; } 
+        public DbSet<Apples> ?Apples { get; set; }
+
+        public DbSet<Map> ?Map { get; set; }
+
+        public DbSet<AppleFinder.Models.Orchard>? Orchard { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -56,10 +61,6 @@ namespace AppleFinder.Models
                 ); ;
         }
 
-        public DbSet<AppleFinder.Models.Apples>? Apples { get; set; }
-
-        public DbSet<AppleFinder.Models.Map>? Map { get; set; }
-
-        public DbSet<AppleFinder.Models.Orchard>? Orchard { get; set; }
+       
     }
 }
