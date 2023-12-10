@@ -16,3 +16,32 @@ html {
 body {
   margin-bottom: 60px;
 }
+.grid-container {
+    display: grid;
+    justify-content:space-around;
+    grid-template-columns: 200px 200px 200px;
+    gap: 10px;
+    background-color: white;
+    padding: 10px;
+}
+.grid-container > div {
+    background-color: white;
+    padding: 10px 0;
+    font-size:20px;
+    text-align:center;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #009999;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: aquamarine;
+}

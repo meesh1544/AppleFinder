@@ -19,8 +19,11 @@ namespace AppleFinder.Controllers
         }
 
         // GET: Apples
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DescriptionSortParm"] = String.IsNullOrEmpty(sortOrder) ? "description_desc" : "";
+
               return _context.Apples != null ? 
                           View(await _context.Apples.ToListAsync()) :
                           Problem("Entity set 'AppleContext.Apples'  is null.");

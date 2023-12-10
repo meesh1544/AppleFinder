@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AppleFinder.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AppleFinder.Controllers
 {
@@ -19,6 +20,7 @@ namespace AppleFinder.Controllers
         }
 
         // GET: Member
+        [Authorize(Roles ="Administrator, Manager, User")]
         public async Task<IActionResult> Index()
         {
             return _context.Membership != null ?
@@ -27,6 +29,7 @@ namespace AppleFinder.Controllers
         }
 
         // GET: Member/Details/5
+        [Authorize(Roles = "Administrator, Manager, User")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Membership == null)
@@ -45,6 +48,7 @@ namespace AppleFinder.Controllers
         }
 
         // GET: Member/Create
+        [Authorize(Roles = "Administrator, Manager")]
         public IActionResult Create()
         {
             return View();
@@ -67,6 +71,7 @@ namespace AppleFinder.Controllers
         }
 
         // GET: Member/Edit/5
+        [Authorize(Roles = "Administrator, Manager")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Membership == null)
@@ -85,6 +90,7 @@ namespace AppleFinder.Controllers
         // POST: Member/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Administrator, Manager")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,FirstName,LastName,GenderIdentity,Address,City,State,Zip,Email,Cell")] Members members)
@@ -118,6 +124,7 @@ namespace AppleFinder.Controllers
         }
 
         // GET: Member/Delete/5
+        [Authorize(Roles = "Administrator, Manager")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Membership == null)
@@ -138,6 +145,7 @@ namespace AppleFinder.Controllers
         // POST: Member/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Manager")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Membership == null)

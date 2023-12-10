@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppleFinder.Migrations
 {
     [DbContext(typeof(AppleContext))]
-    [Migration("20231011201338_MyMigration")]
-    partial class MyMigration
+    [Migration("20231028221028_AppleFinder")]
+    partial class AppleFinder
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,26 +78,27 @@ namespace AppleFinder.Migrations
                         .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<int?>("GenderIdentity")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("First Name");
 
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("Last Name");
 
                     b.Property<string>("State")
-                        .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Zip")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
@@ -109,21 +110,38 @@ namespace AppleFinder.Migrations
                         new
                         {
                             ID = 1,
+                            Address = "19878 Maple Glade Ln",
+                            Cell = "231-357-1640",
+                            City = "Lake Ann",
                             Email = "mbeckett@nmc.edu",
                             FirstName = "Michelle",
-                            LastName = "Beckett"
+                            LastName = "Beckett",
+                            State = "MI",
+                            Zip = "49970"
                         },
                         new
                         {
                             ID = 2,
+                            Address = "1887 Forest Ln",
+                            Cell = "765-441-0032",
+                            City = "Nowhere",
+                            Email = "hhenderson@gmail.com",
                             FirstName = "Harry",
-                            LastName = "Henderson"
+                            LastName = "Henderson",
+                            State = "Ak",
+                            Zip = "45987"
                         },
                         new
                         {
                             ID = 3,
+                            Address = "1887 Hop Ln",
+                            Cell = "887-995-2201",
+                            City = "Carrot",
+                            Email = "bbunny43@gmail.com",
                             FirstName = "Bugs",
-                            LastName = "Bunny"
+                            LastName = "Bunny",
+                            State = "WY",
+                            Zip = "49684"
                         });
                 });
 

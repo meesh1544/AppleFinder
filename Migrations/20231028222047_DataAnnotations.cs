@@ -4,7 +4,7 @@
 
 namespace AppleFinder.Migrations
 {
-    public partial class DataAnnotation : Migration
+    public partial class DataAnnotations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

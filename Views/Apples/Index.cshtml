@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Apple Name</a> 
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th></th>
